@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+button{
+  font-weight: 400;
+}
+
+.footer-bg {
+  background-color: #f5f5f5;
+}

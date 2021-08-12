@@ -1,0 +1,31 @@
+<div class="container d-flex flex-column justify-content-between mt-2 mt-md-5">
+  <div class="row col-md-6 mb-2 justify-content-start align-content-center d-flex">
+    <ng-container *ngFor="let entry of toKanaButtons">
+      <button class="m-1" mat-stroked-button (click)="entry.callback()">
+        <div fxHide.lt-lg="true">
+          {{ entry.label }}
+        </div>
+        <div class="to-kana-short-label" fxHide.gt-md="true">
+          {{ entry.shortLabel }}
+        </div>
+      </button>
+    </ng-container>
+  </div>
+
+  <div class="row">
+    <app-free-text class="col-md-6"></app-free-text>
+    <app-translator class="col-md-6"></app-translator>
+  </div>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between mb-2">
+      <button class="col-4 col-md-2" mat-stroked-button (click)="onSearchRequested()">Find kanji</button>
+      <div class="col-8 col-md-4 d-flex flex-row justify-content-end">
+        <button class="col-6 col-lg-4 mr-1" mat-stroked-button (click)="onTranslateInDeepl()">DeepL<mat-icon>launch</mat-icon></button>
+        <button class="col-6 col-lg-4" mat-stroked-button (click)="onTranslate()">Google</button>
+      </div>
+    </div>
+  </div>
+
+  <app-jisho-search class="col-md-12"></app-jisho-search>
+</div>

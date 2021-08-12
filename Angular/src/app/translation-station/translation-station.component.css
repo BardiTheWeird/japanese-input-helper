@@ -1,0 +1,9 @@
+.to-kana-short-label{
+  font-weight: 400;
+}
+
+.mat-icon {
+  vertical-align: bottom !important;
+  margin-bottom: 2px;
+  font-size: 16px;
+}

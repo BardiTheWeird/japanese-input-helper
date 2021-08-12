@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Shortcuts:</h2>
+<mat-dialog-content>
+  <table mat-table [dataSource]="shortcuts" class="col-12">
+    <mat-text-column name="shortcut">Shorcut</mat-text-column>
+    <mat-text-column name="description">Description</mat-text-column>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let entry; columns: columnsToDisplay"></tr>
+  </table>
+
+  <button class="col-12 mt-2" mat-stroked-button (click)="onClose()">Go Back</button>
+</mat-dialog-content>
+

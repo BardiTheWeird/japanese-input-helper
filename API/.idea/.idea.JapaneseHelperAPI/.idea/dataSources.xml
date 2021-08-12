@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="postgres@localhost" uuid="deddeadd-f42b-457e-8b5e-15a699d38296">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="rds postgres" uuid="69187809-89c9-4544-9915-c6e63fa7d56f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://jp-helper-db.c6n0nux9x1n2.us-east-2.rds.amazonaws.com:5432/postgres</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="AWS.RdsSigningPort" value="5432" />
+        <property name="AWS.RegionId" value="us-east-2" />
+        <property name="AWS.RdsSigningHost" value="jphelperdb.c6n0nux9x1n2.us-east-2.rds.amazonaws.com" />
+        <property name="AWS.CredentialId" value="profile:jaHelperUser1" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="rds iam_user" uuid="f27a8683-4755-4697-8e11-ca74ced59068">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://jphelperdb.c6n0nux9x1n2.us-east-2.rds.amazonaws.com:5432/jpHelperDb</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="AWS.RegionId" value="us-east-2" />
+        <property name="AWS.CredentialId" value="profile:jaHelperUser1" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

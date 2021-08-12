@@ -1,0 +1,32 @@
+h1 {
+  text-align: center;
+  font-size: 56px;
+  font-weight: 300;
+}
+
+.meanings {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.readings {
+  font-size: 22px;
+  font-family: "Yu Gothic";
+}
+
+.reading-kind {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.jisho-link {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: green !important;
+  text-decoration-line: underline !important;
+}
+
+mat-icon {
+  font-size: 18px;
+  vertical-align: top;
+}

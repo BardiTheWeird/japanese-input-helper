@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>{{ literal }}</h1>
+<mat-dialog-content>
+  <div class="container d-flex flex-column m-0 p-0">
+    <div class="container d-flex flex-column">
+      <div class="m-2" *ngIf="meanings.length > 0">
+        <span class="meanings">{{ meanings }}</span>
+      </div>
+
+      <div *ngIf="on.length > 0" class="m-1 ml-2 mr-2">
+        <span class="reading-kind">On: </span>
+        <span class="readings">{{on}}</span>
+      </div>
+
+      <div *ngIf="kun.length > 0" class="m-1 ml-2 mr-2">
+        <span class="reading-kind">Kun: </span>
+        <span class="readings">{{kun}}</span>
+      </div>
+
+      <div *ngIf="nanori.length > 0" class="m-1 ml-2 mr-2">
+        <span class="reading-kind">Nanori: </span>
+        <span class="readings">{{nanori}}</span>
+      </div>
+
+      <a (click)="onOpenJisho()" class="jisho-link m-2 mt-1">
+        Read more at Jisho.org<mat-icon>launch</mat-icon>
+      </a>
+
+      <button mat-stroked-button class="ml-2 mr-2 col-12" (click)="onClose()">Go Back</button>
+    </div>
+  </div>
+</mat-dialog-content>
+
