@@ -111,6 +111,9 @@ namespace JapaneseHelperAPI.Services.KanjiSearch
                     .Select(s => TrigramExtensions.JacaardTrigramSimilarity(query, s))
                     .Max();
 
+                // In order to prefer exact matches
+                perWordSimilarity -= 0.05f;
+
                 return Math.Max(perPhraseSimilarity, perWordSimilarity);
             }
 
