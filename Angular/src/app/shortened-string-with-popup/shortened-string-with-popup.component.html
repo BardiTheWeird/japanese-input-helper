@@ -1,8 +1,0 @@
-  <span *ngIf="showTooltip; else elseBlock"
-    #tooltip="matTooltip"
-    [matTooltip]="str">
-  {{ cutOffString() }}
-  </span>
-  <ng-template #elseBlock>
-    <span>{{str}}</span>
-  </ng-template>
