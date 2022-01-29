@@ -40,7 +40,6 @@ namespace JapaneseHelperAPI.Services.KanjiSearch
         }
 
         public TrigramIndexer(IEnumerable<T> entries, Func<T, string[]> toTrigrammable) : this()
-
         {
             foreach (var entry in entries) AddEntry(entry, toTrigrammable);
         }
