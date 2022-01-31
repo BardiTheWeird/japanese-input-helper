@@ -5,6 +5,9 @@ import { HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { environment } from "../environments/environment";
 import { catchError } from "rxjs/operators";
 
+declare const GetKanjiEntryByMeaning: Function;
+declare const GetKanjiEntryById: Function;
+
 function constructKanjiSearchByMeaningQuery(meaning : string) {
   return `${environment.kanjiDictionaryApiEndpoint}meaning=${meaning}&topEntries=${5}&topMeanings=${5}&stripReadings=${true}`;
 }
@@ -41,19 +44,35 @@ export class KanjiSearchService {
       'Something bad happened; please try again later.');
   }
 
-  searchByMeaning(meaning: string): void {
+  async searchByMeaning(meaning: string): Promise<void> {
     this.searchStringSource.next(meaning);
-    this.http.get<KanjiEntry[]>(constructKanjiSearchByMeaningQuery(meaning))
-      .pipe(
-        catchError(this.handleError)
-      )
-      .subscribe(data => this.searchByMeaningResultsSource.next(data));
+
+    
+
+    const jsonEntries : string = await (async () => {
+      await new Promise(f => setTimeout(f, 100));
+      return GetKanjiEntryByMeaning(meaning, 5);
+    })();
+    const entries : KanjiEntry[] = JSON.parse(jsonEntries)
+
+    this.searchByMeaningResultsSource.next(entries)
+
+    // this.http.get<KanjiEntry[]>(constructKanjiSearchByMeaningQuery(meaning))
+    //   .pipe(
+    //     catchError(this.handleError)
+    //   )
+    //   .subscribe(data => this.searchByMeaningResultsSource.next(data));
   }
 
-  searchById(id : number): Observable<KanjiEntry> {
-    return this.http.get<KanjiEntry>(constructKanjiSearchByIdQuery(id))
-      .pipe(
-        catchError(this.handleError)
-      );
+  searchById(id : number): KanjiEntry {
+    const jsonEntry : string = GetKanjiEntryById(id);
+    const entry : KanjiEntry = JSON.parse(jsonEntry);
+
+    return entry;
+
+    // return this.http.get<KanjiEntry>(constructKanjiSearchByIdQuery(id))
+    //   .pipe(
+    //     catchError(this.handleError)
+    //   );
   }
 }

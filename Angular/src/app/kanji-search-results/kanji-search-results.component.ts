@@ -73,6 +73,9 @@ export class KanjiSearchResults implements OnInit {
       data => {
         this.searchResults = data.map((entry, i) =>
           <KanjiTableRow> { id: i, entry: entry });
+
+        console.log('search results:', this.searchResults)
+        
         this.searching = false;
       }
     );

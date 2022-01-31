@@ -49,13 +49,8 @@ export class KanjiDetailsComponent implements OnInit {
   ngOnInit(): void {
     if (this.id) {
       console.log(`searching for kanji with id ${this.id}`);
-      this.kanjiSearch.searchById(this.id)
-        .subscribe(data => {
-          if (data) {
-            this.entry = data;
-            this.updateFieldsFromEntry();
-          }
-        })
+      this.entry = this.kanjiSearch.searchById(this.id);
+      this.updateFieldsFromEntry();
     }
   }
 }
